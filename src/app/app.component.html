@@ -1,0 +1,25 @@
+
+
+<mat-sidenav-container id="max-height">
+    <mat-sidenav opened="true" mode="side" disableClose="true" #sidenav id="sidenav-css">
+      <mat-nav-list id="nav-list-css">
+  
+        <a mat-list-item routerLink="home">Home</a>
+        <a *ngIf="!isLogin" mat-list-item routerLink="login">Login</a>
+        <a *ngIf="!isLogin" mat-list-item routerLink="signup">Sign Up</a>
+        <a *ngIf="isLogin && roleId == 0" mat-list-item routerLink="booking-order">Booking Order</a>
+        <a *ngIf="isLogin && roleId == 0" mat-list-item routerLink="upload-file">Upload File</a>
+        <a *ngIf="isLogin && roleId == 0" mat-list-item>Dashboard {{this.accountService.currentUser.username}}</a>
+        <a *ngIf="isLogin && roleId == 1" mat-list-item routerLink="admin">Admin Page</a>
+        <a *ngIf="isLogin" (click)="logout()" mat-list-item>Log Out</a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 100vh;">
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+

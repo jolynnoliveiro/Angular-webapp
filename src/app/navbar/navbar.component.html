@@ -1,0 +1,31 @@
+<div style="padding: 50px;">
+<div class="app-toolbar-img text-center" style="background-color: white; box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);">
+    <img src= "assets/aimst - Copy.png" alt="white" style="display: inline-block">
+    <h1 style="display: inline-block">Aimst University's Printing Service</h1>
+    <h2>{{businessOpen ? "Shop is Open" : "Shop is Close"}}</h2>
+
+    <button mat-icon-button (click)="testClick()">
+        <mat-icon matBadge="{{notifications}}" matBadgeColor="warn">notifications</mat-icon>
+    </button>
+</div>
+</div>
+
+<div id="modal-notification" class="modal">
+    <div class="modal-content text-center">
+        <p *ngFor="let noti of notificationList">{{noti.description}}</p>
+    </div>
+</div>
+
+
+<!-- <mat-toolbar class="app-toolbar">
+    <h1>Raspberry Project</h1>
+    <span class="spacer"></span>
+    <button mat-button routerLink="home">Home</button>
+    <button *ngIf="!isLogin" mat-button routerLink="login">Login</button>
+    <button *ngIf="!isLogin" mat-button routerLink="signup">Sign Up</button>
+    <button *ngIf="isLogin" mat-button routerLink="booking-order">Booking Order</button>
+    <button *ngIf="isLogin" mat-button routerLink="upload-file">Upload File</button>
+    <button *ngIf="isLogin" mat-button>Dashboard {{this.accountService.currentUser.username}}</button>
+    <button *ngIf="isLogin && roleId == 1" mat-button routerLink="admin">Admin Page</button>
+    <button *ngIf="isLogin" (click)= "logout()" mat-button>Log Out</button>
+</mat-toolbar> -->

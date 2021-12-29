@@ -1,0 +1,28 @@
+<!-- <div *ngFor="let x of bookingDate; let i = index">
+    <a class="btn" (click)="onDateClick(x)"> {{x.date.substring(0,10)}}</a>
+</div> -->
+
+<div style="padding: 24px;">
+<div *ngFor="let y of dateSelection; let j = index">
+  <a class="btn" (click)="onDateClickV2(y)">{{y}}</a>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content text-center">
+      <h4>Modal Header</h4>
+      <p>{{contentDate}}</p>
+
+      <select class="form-select" (change)="onTimeChange($event)" [(ngModel)]="selected_time">
+        <option value="" disabled selected>Select your booking time...</option>
+        <option *ngFor="let time of timeSelection" [value]="time">{{time}}</option>
+      </select>
+
+    </div>
+
+    <div class="modal-footer flex-text-center">
+      <a class="modal-close waves-effect waves-green btn-flat" (click)="onConfirm()">Confirm</a>
+      <a class="modal-close waves-effect waves-green btn-flat" (click)="onClose()">Close</a>
+    </div>
+</div>
+</div>

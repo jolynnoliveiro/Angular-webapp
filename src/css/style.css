@@ -1,0 +1,26 @@
+.modal {
+    height: auto !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.flex-text-center {
+    align-items: center;
+    justify-content: center;
+}
+
+[type="radio"]:not(:checked)+span, [type="radio"]:checked+span {
+    display: none !important;
+  }
+
+.mat-drawer-inner-container {
+    min-width: 200px;
+    display: flex;
+    align-items:center;
+}
+
+.mat-list-item-content {
+    min-width: 200px;
+}

@@ -1,0 +1,79 @@
+<div class="content">
+    <mat-card class="card-content">
+        <mat-tab-group mat-align-tabs="center" dynamicHeight>
+            <mat-tab label="Upload File">
+                <mat-card-content class="top-bottom">
+                <br/>
+                    <div>
+                        <input type="file" id="uploadFile" (change)="onFileSelected($event)" />
+                    </div> 
+                    <br/>
+                    <label id="example-radio-group-label">Choose your paper type</label>
+                    <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    [(ngModel)]="selectedPaperType">
+                    <mat-radio-button class="example-radio-button" *ngFor="let paperType of paperTypes" [value]="paperType"
+                        (change)="onSelectPaperType($event)">
+                        {{paperType}}
+                      </mat-radio-button>
+                    </mat-radio-group>
+
+                    <label id="example-radio-group-label">Choose your ink color</label>
+                    <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    [(ngModel)]="selectedInkType">
+                    <mat-radio-button class="example-radio-button" *ngFor="let inkType of inkTypes" [value]="inkType" 
+                        (change)="onSelectInkType($event)">
+                        {{inkType}}
+                      </mat-radio-button>
+                    </mat-radio-group>
+
+                    <label id="example-radio-group-label">Binding Type</label>
+                    <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    [(ngModel)]="selectedBindingType">
+                    <mat-radio-button class="example-radio-button" *ngFor="let bindingType of bindingTypes" [value]="bindingType" 
+                    (change)="onSelectBindingType($event)">
+                        {{bindingType}}
+                      </mat-radio-button>
+                    </mat-radio-group>
+
+                    <label id="example-radio-group-label">Cover Type</label>
+                    <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    [(ngModel)]="selectedCoverType">
+                    <mat-radio-button class="example-radio-button" *ngFor="let coverType of coverTypes" [value]="coverType" 
+                    (change)="onSelectCoverType($event)">
+                        {{coverType}}
+                      </mat-radio-button>
+                    </mat-radio-group>
+
+                    <label id="example-radio-group-label">Front Only or Front & Back</label>
+                    <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    [(ngModel)]="selectedPaperFrontBackType">
+                    <mat-radio-button class="example-radio-button" *ngFor="let paperFrontBackType of paperFrontBackTypes" 
+                    [value]="paperFrontBackType" 
+                    (change)="onSelectFrontBack($event)">
+                        {{paperFrontBackType}}
+                      </mat-radio-button>
+                    </mat-radio-group>
+                   
+                    <label>Remarks (Optional)</label>
+                    <input matInput [(ngModel)] = "message" maxlength="200" placeholder="Add your remarks">
+                    <mat-hint align="end">{{message.length}} / 200</mat-hint>
+                    
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <button mat-button (click)="onUpload()">Upload</button>
+                </mat-card-actions>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+
+</div>
