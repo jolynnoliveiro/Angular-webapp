@@ -110,7 +110,7 @@ export class UploadFileComponent implements OnInit {
             const userFile = Object.assign({});
             userFile.userId = this.accountService.currentUser.id;
             userFile.uploadId = res[0].unixTime;
-            userFile.selectedFile = this.selectedFile;  
+            userFile.selectedFile = this.selectedFile;
 
             this.uploadFilesService.httpUploadFileV2(userFile).then(
               res => {
@@ -195,5 +195,17 @@ export class UploadFileComponent implements OnInit {
     } else {
         this.coverTypesInteger = 0;
     }
+  }
+
+  testButton() {
+    console.log(this.selectedFile);
+    
+/* 
+    var reader = new FileReader();
+    reader.readAsBinaryString(this.selectedFile[0]);
+    reader.onloadend = function(){
+        var count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+        console.log('Number of Pages:',count );
+    } */
   }
 }

@@ -63,6 +63,7 @@ import { BookingService } from './services/booking.service';
 import { UploadFileComponent } from './pages/upload-file/upload-file.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminService } from './services/admin.service';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { AdminService } from './services/admin.service';
     SignupComponent,
     BookingOrderComponent,
     UploadFileComponent,
-    AdminComponent
+    AdminComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -166,7 +168,8 @@ import { AdminService } from './services/admin.service';
     TestService,
     AccountService,
     BookingService,
-    AdminService
+    AdminService,
+    NavbarComponent,
   ],
   bootstrap: [AppComponent]
 })

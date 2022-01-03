@@ -8,15 +8,18 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { UploadFileComponent } from './pages/upload-file/upload-file.component';
 import { AuthGuard } from './guards/auth-guard.guard';
 import { AuthAdminGuard } from './guards/auth-admin.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
+  { path: '', component: HomeComponent },
 
   // route that require login
   { path: 'booking-order', component: BookingOrderComponent, canActivate:[AuthGuard] },
   { path: 'upload-file', component: UploadFileComponent, canActivate:[AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
 
   // route that require admin login
   { path: 'admin', component: AdminComponent, canActivate:[AuthAdminGuard]}

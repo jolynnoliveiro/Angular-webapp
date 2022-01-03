@@ -23,4 +23,13 @@
 
 .mat-list-item-content {
     min-width: 200px;
+    font-size: 18px;
 }
+
+  label {
+    font-size: 16px;
+  }
+
+  .content {
+      margin: 10px auto 16px;
+  }

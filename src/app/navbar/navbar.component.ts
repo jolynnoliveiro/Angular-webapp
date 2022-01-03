@@ -59,7 +59,11 @@ export class NavbarComponent implements OnInit {
   }
 
   getNotification() {
-    this.adminService.getNotification({}).then (
+
+    const obj = Object.assign({});
+    obj.userId = this.accountService.currentUser.id;
+
+    this.adminService.getNotification(obj).then (
       (res) => {
         this.notifications = res.length;
 
@@ -71,7 +75,12 @@ export class NavbarComponent implements OnInit {
 
   testClick() {
     M.Modal.getInstance($('#modal-notification')).open();
-    this.adminService.getNotification({}).then (
+
+
+    const obj = Object.assign({});
+    obj.userId = this.accountService.currentUser.id;
+
+    this.adminService.getNotification(obj).then (
       (res) => {
         this.notificationList = res;
         

@@ -3,14 +3,25 @@
 </div> -->
 
 <div style="padding: 24px;">
-<div *ngFor="let y of dateSelection; let j = index">
-  <a class="btn" (click)="onDateClickV2(y)">{{y}}</a>
-</div>
+
+
+  <mat-grid-list cols="4" rowHeight="200px" class="content">
+    <mat-grid-tile *ngFor="let y of dateSelection; let j = index"
+      [colspan]="1"
+      [rowspan]="1">
+      <mat-card (click)="onDateClickV2(y)">
+        <mat-card-title>{{y}}</mat-card-title>
+        <mat-card-actions>
+          <button class="mat-button-action" mat-button (click)="onDateClickV2(y)">Book here</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content text-center">
-      <h4>Modal Header</h4>
+      <h4>Time Selection</h4>
       <p>{{contentDate}}</p>
 
       <select class="form-select" (change)="onTimeChange($event)" [(ngModel)]="selected_time">

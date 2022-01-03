@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from 'Angular-webapp/node_modules/@angular/material/snack-bar';
+import { NavbarComponent } from './navbar/navbar.component';
 import { AccountService } from './services/account.service';
 import { AdminService } from './services/admin.service';
 
@@ -14,7 +15,7 @@ export class AppComponent {
   public isLogin = false;
   public roleId = 0;
   
-  constructor(public accountService: AccountService, public router: Router) { 
+  constructor(public accountService: AccountService, public router: Router, public navBar: NavbarComponent) { 
     this.isLogin = accountService.isLoggedIn;
     this.roleId = accountService.roleId;
 
@@ -29,6 +30,7 @@ export class AppComponent {
 
 
   logout() {
+    this.navBar.notifications = 0;
     this.accountService.logout().then(
       () => {
         this.isLogin = this.accountService.isLoggedIn;

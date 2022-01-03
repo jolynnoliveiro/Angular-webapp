@@ -4,14 +4,33 @@
     <mat-sidenav opened="true" mode="side" disableClose="true" #sidenav id="sidenav-css">
       <mat-nav-list id="nav-list-css">
   
-        <a mat-list-item routerLink="home">Home</a>
-        <a *ngIf="!isLogin" mat-list-item routerLink="login">Login</a>
-        <a *ngIf="!isLogin" mat-list-item routerLink="signup">Sign Up</a>
-        <a *ngIf="isLogin && roleId == 0" mat-list-item routerLink="booking-order">Booking Order</a>
-        <a *ngIf="isLogin && roleId == 0" mat-list-item routerLink="upload-file">Upload File</a>
-        <a *ngIf="isLogin && roleId == 0" mat-list-item>Dashboard {{this.accountService.currentUser.username}}</a>
-        <a *ngIf="isLogin && roleId == 1" mat-list-item routerLink="admin">Admin Page</a>
-        <a *ngIf="isLogin" (click)="logout()" mat-list-item>Log Out</a>
+        
+        <a mat-list-item routerLink="home"><mat-icon mat-list-icon>home</mat-icon><div mat-line>Home</div></a>
+        <a *ngIf="!isLogin" mat-list-item routerLink="login"><mat-icon mat-list-icon>login</mat-icon><div mat-line>Login</div></a>
+        <a *ngIf="!isLogin" mat-list-item routerLink="signup"><mat-icon mat-list-icon>add</mat-icon><div mat-line>Sign Up</div></a>
+        <a *ngIf="isLogin && roleId == 0" mat-list-item routerLink="booking-order">
+          <mat-icon mat-list-icon><span class="material-icons-outlined">
+          bookmark_add
+          </span></mat-icon><div mat-line>Booking Order</div>
+        </a>
+        <a *ngIf="isLogin && roleId == 0" mat-list-item routerLink="upload-file">
+          <mat-icon mat-list-icon>file_upload</mat-icon><div mat-line>Upload File</div>
+        </a>
+        <a *ngIf="isLogin && roleId == 0" mat-list-item routerLink="dashboard">
+          <mat-icon mat-list-icon>face</mat-icon><div mat-line>Dashboard {{this.accountService.currentUser.username}}</div>
+        </a>
+        <a *ngIf="isLogin && roleId == 1" mat-list-item routerLink="admin">
+          <mat-icon mat-list-icon>
+            <span class="material-icons-outlined">
+            admin_panel_settings
+            </span>
+          </mat-icon>
+          <div mat-line>Admin Page</div>
+        </a>
+        <a *ngIf="isLogin" (click)="logout()" mat-list-item>
+          <mat-icon mat-list-icon>logout</mat-icon>
+          <div mat-line>Log Out</div>
+        </a>
 
       </mat-nav-list>
     </mat-sidenav>

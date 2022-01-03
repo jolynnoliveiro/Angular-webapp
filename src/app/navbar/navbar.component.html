@@ -1,8 +1,8 @@
-<div style="padding: 50px;">
-<div class="app-toolbar-img text-center" style="background-color: white; box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);">
+<div style="padding: 20px;">
+<div class="app-toolbar-img text-left" style="background-color: white; box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);">
     <img src= "assets/aimst - Copy.png" alt="white" style="display: inline-block">
-    <h1 style="display: inline-block">Aimst University's Printing Service</h1>
-    <h2>{{businessOpen ? "Shop is Open" : "Shop is Close"}}</h2>
+    <h1 style="display: inline-block">Welcome to AIMST University's Printing Services</h1>
+    <h2>{{businessOpen ? "SHOP IS OPEN" : "SHOP IS CLOSED"}}</h2>
 
     <button mat-icon-button (click)="testClick()">
         <mat-icon matBadge="{{notifications}}" matBadgeColor="warn">notifications</mat-icon>
@@ -12,7 +12,12 @@
 
 <div id="modal-notification" class="modal">
     <div class="modal-content text-center">
-        <p *ngFor="let noti of notificationList">{{noti.description}}</p>
+        <h1><mat-icon mat-list-icon>notifications</mat-icon>Notifications</h1>
+        
+        <mat-card *ngFor="let noti of notificationList">
+            <mat-card-title>{{noti.description}}</mat-card-title>
+            <mat-card-subtitle>{{noti.notification_datetime}}</mat-card-subtitle>
+        </mat-card>
     </div>
 </div>
 

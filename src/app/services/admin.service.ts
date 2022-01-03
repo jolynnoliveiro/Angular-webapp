@@ -92,4 +92,30 @@ export class AdminService {
     })
   }
 
+  //  
+  getBookedOrdersByUserId(data: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const url = 'http://localhost:3000/api/getBookedOrdersByUserId';
+      this.myHttp.postData(url, data)
+      .subscribe((res: any) => {
+        resolve(res);
+      }, (error) => {
+        reject(error);
+      })
+    })
+  }
+
+  //  
+  getUploadRecordsByUserId(data: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const url = 'http://localhost:3000/api/getUploadRecordsByUserId';
+      this.myHttp.postData(url, data)
+      .subscribe((res: any) => {
+        resolve(res);
+      }, (error) => {
+        reject(error);
+      })
+    })
+  }
+
 }
