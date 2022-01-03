@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatSnackBar } from 'Angular-webapp/node_modules/@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AccountService } from './services/account.service';
 import { AdminService } from './services/admin.service';
